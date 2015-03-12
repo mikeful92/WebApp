@@ -12,9 +12,9 @@ def index(request):
 def lookup(request):
     return render(request, 'utility/lookup.html')
 
-def backend(request):
+def results(request):
     address = request.POST['address']
     my_object = get_list_or_404(ElectricConsumption, service_address=address)
     context = {'address': address,
                'my_object': my_object}
-    return render(request, 'utility/backend.html', context)
+    return render(request, 'utility/results.html', context)

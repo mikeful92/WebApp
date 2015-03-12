@@ -5,7 +5,7 @@
 
     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-    <form action="{% url 'utility:backend' %}" method="post">
+    <form action="{% url 'utility:results' %}" method="post">
         {% csrf_token %}
         <label for="address">Address</label>
         <br>
