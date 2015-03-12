@@ -1,11 +1,26 @@
 {% extends "base.html" %}
 
+{% block head %}
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'utility/style.css' %}" />
+{% endblock %}
+
 {% block content %}
-    <h1>KWH consumption at {{ address }}:</h1>
-    {% for obj in my_object %}
-        {{ obj.month }}  {{ obj.year }}  {{ obj.kwh_consumption }}
-        <br>
-    {% endfor %}
-    <br>
-    <a href="{% url 'utility:lookup' %}">Lookup again</a>
+    <div class="main">
+        <h1>KWH consumption at {{ address }}:</h1>
+        <div class="heading">
+            <div class="col month">Month</div>
+            <div class="col year">Year</div>
+            <div class="col consump">KWH</div>
+        </div>
+        {% for obj in my_object %}
+            <div class="entry"  id="{{ obj.id }}">
+                <div class="col month">{{ obj.month }}</div>
+                <div class="col year">{{ obj.year }}</div>
+                <div class="col consump">{{ obj.kwh_consumption }}</div>
+            </div>
+        {% endfor %}
+        <div class="clear"></div>
+    </div>
 {% endblock %}

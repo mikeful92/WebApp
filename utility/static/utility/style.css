@@ -1,0 +1,9 @@
+div.main        {width: 600px; margin: 0 auto;}
+div.entry       { width: 350px; margin: 0 auto;}
+div.entry div   { height: 25px; float: left; }
+div.month       { width: 150px; }
+div.year        { width: 100px; }
+div.consump     { width: 100px; }
+div.heading       { width: 350px; margin: 0 auto;}
+div.heading div   { height: 25px; float: left; font-weight: bold; }
+div.clear         { clear: both; }

@@ -1,17 +1,25 @@
 {% extends "base.html" %}
 
+{% block head %}
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'utility/style.css' %}" />
+{% endblock %}
+
 {% block content %}
-    <h1>Lookup Address's Utility</h1>
+    <div class="main">
 
-    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <h1>Lookup Address's Utility</h1>
 
-    <form action="{% url 'utility:results' %}" method="post">
-        {% csrf_token %}
-        <label for="address">Address</label>
-        <br>
-        <input type="text" name="address">
-        <input type="submit">
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-    </form>
+        <form action="{% url 'utility:results' %}" method="post">
+            {% csrf_token %}
+            <label for="address">Street Address</label>
+            <br>
+            <input type="text" name="address" required>
+            <input type="submit" value="Lookup">
 
+        </form>
+    </div>
 {% endblock %}

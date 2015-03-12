@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 
+{% block head %}
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'utility/style.css' %}" />
+{% endblock %}
+
 {% block content %}
-    <h1>Welcome to the Utility App</h1>
-
-    <a href="{% url 'utility:lookup' %}">Look up address</a>
-
+    <div class="main">
+        <h1>Welcome!</h1>
+        Select lookup on the right hand menu and input the address to a single family home in Gainesville, Fl
+    </div>
 {% endblock %}

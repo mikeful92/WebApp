@@ -13,7 +13,7 @@ def lookup(request):
     return render(request, 'utility/lookup.html')
 
 def results(request):
-    address = request.POST['address']
+    address = request.POST['address'].upper()
     my_object = get_list_or_404(ElectricConsumption, service_address=address)
     context = {'address': address,
                'my_object': my_object}
