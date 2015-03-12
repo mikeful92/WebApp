@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>KWH consumption at {{ address }}:</h1>
+    {% for obj in my_object %}
+        {{ obj.month }}  {{ obj.year }}  {{ obj.kwh_consumption }}
+        <br>
+    {% endfor %}
+    <br>
+{% endblock %}

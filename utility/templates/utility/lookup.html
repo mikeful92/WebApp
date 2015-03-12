@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Lookup Address's Utility</h1>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <form action="{% url 'utility:backend' %}" method="post">
+        {% csrf_token %}
+        <label for="address">Address</label>
+        <br>
+        <input type="text" name="address">
+        <input type="submit">
+
+    </form>
+
+{% endblock %}
